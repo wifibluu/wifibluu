@@ -1,0 +1,93 @@
+--top 5 schools with the most students
+SELECT  *
+FROM `first-bit-387717.top_20th_schools.top 20 schools` 
+ORDER BY No_of_student DESC 
+LIMIT 5
+
+--top 5 schools with the least students
+SELECT  *
+FROM `first-bit-387717.top_20th_schools.top 20 schools` 
+ORDER BY No_of_student 
+LIMIT 5
+
+--Number of students per staff least
+SELECT  *
+FROM `first-bit-387717.top_20th_schools.top 20 schools` 
+ORDER BY No_of_student_per_staff 
+LIMIT 5
+
+-- a most number of students per staff
+SELECT  *
+FROM `first-bit-387717.top_20th_schools.top 20 schools` 
+ORDER BY No_of_student_per_staff DESC
+LIMIT 5
+
+--Top 5 on rank school
+SELECT *
+ FROM `first-bit-387717.top_20th_schools.top 20 schools`
+ Order by University_Rank
+ Limit 5
+
+
+-- most student per staff
+SELECT *
+ FROM `first-bit-387717.top_20th_schools.top 20 schools`
+ ORDER BY No_of_student_per_staff DESC
+ LIMIT 8
+-- most student inenroll
+SELECT *
+ FROM `first-bit-387717.top_20th_schools.top 20 schools`
+ ORDER BY No_of_student DESC
+ LIMIT 8
+
+
+--least student enroll
+SELECT *
+ FROM `first-bit-387717.top_20th_schools.top 20 schools`
+ ORDER BY No_of_student
+ LIMIT 8
+
+
+-- highest overall score
+SELECT *
+ FROM `first-bit-387717.top_20th_schools.top 20 schools`
+ ORDER BY OverAll_Score DESC
+ LIMIT 5
+-- highest Teaching score
+SELECT *
+ FROM `first-bit-387717.top_20th_schools.top 20 schools`
+ ORDER BY Teaching_Score DESC
+ LIMIT 5
+--count schools in US (12)
+SELECT COUNT(Location)
+ FROM `first-bit-387717.top_20th_schools.top 20 schools`
+ Where Location = "United States"
+--count schools in Uk (3)
+SELECT COUNT(Location)
+ FROM `first-bit-387717.top_20th_schools.top 20 schools`
+ Where Location = "United Kingdom"
+--count schools location is Unknown (3) 20-17=3
+SELECT COUNT(Location)
+ FROM `first-bit-387717.top_20th_schools.top 20 schools`
+ Where Location IS NOT NULL
+--Big schools, Over 15K students (16)
+SELECT COUNT (No_of_student)
+ FROM `first-bit-387717.top_20th_schools.top 20 schools`
+ Where No_of_student >= 15000
+--Small schools, least 15K students (4)
+SELECT COUNT (No_of_student)
+ FROM `first-bit-387717.top_20th_schools.top 20 schools`
+ Where No_of_student <= 15000
+
+
+
+
+
+
+--code to make Private and public table and insert BOOLEAN values
+ALTER TABLE `first-bit-387717.top_20th_schools.top 20 schools`
+ADD COLUMN PrivateF_Or_PublicT BOOLEAN;
+INSERT INTO Private_Or_Public
+Values (True,True,False,True,False,False,True,False,False,False,True,True,False,True,False,True,False, False, False, True )
+
+
